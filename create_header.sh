@@ -21,6 +21,6 @@ shift
 # recover line whitout ; main while and if whithin (
 for i in "$@"
 do
-grep -e "(" $i | grep -v ";" | grep -v "while" | grep -v "if" | grep -v "main(" | sed -r 's/\)/\)\;/'>> $str;
+grep -e "(" $i | grep -v ";" | grep -v "while" | grep -v "if" | grep -v "main" | grep -v "for" | sed -r 's/\)/\)\;/'>> $str;
 done
 echo "#endif" >> $str;
